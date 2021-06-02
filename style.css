@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+*{
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /*user-select: none;*/
+}
+ul{
+	list-style: none;
+}
+a{
+	color: inherit;
+	text-decoration: none;
+}
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #111;
+}
+.todo{
+  position: relative;
+  background-color: #fff;
+  border-radius: 5px;
+  width: 350px;
+}
+.todo h2{
+  background-color: #00ff00;
+  text-align: center;
+  color: #333;
+  text-transform: uppercase;
+  margin: 8px 7px 0;
+  padding: 10px 20px;
+  font-size: 2em;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-radius: 10px;
+}
+.todo ul{
+  position: relative;
+  padding: 20px;
+}
+.todo ul li{
+  position: relative;
+  padding: 15px 0;
+  border-bottom: 1px solid #ddd;
+}
+/*.todo ul li:first-child{
+  padding-top: 0;
+}*/
+.todo ul li:last-child{
+  border-bottom: none;
+}
+.todo label{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.todo label input{
+  visibility: hidden;
+  appearance: none;
+}
+
+.todo label p{
+  position: absolute;
+  color: #000;
+  text-transform: capitalize;
+  font-size: 1em;
+  font-weight: 300;
+  letter-spacing: .5px;
+}
+
+.todo label span{
+  position: relative;
+  height: 20px;
+  width: 20px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo label span:before{
+  content: '';
+  position: absolute;
+  top: 5px;
+  height: 4px;
+  width: 8px;/*
+  background-color: #ccc;*/
+  border-left: 1.5px solid #ccc;
+  border-bottom: 1.5px solid #ccc;
+  transform: rotate(-40deg);
+}
+
+.todo label input[type="checkbox"]:checked ~ p{
+  text-decoration: line-through;
+  color: #ccc;
+  transition: .3s ease-in-out;
+}
+
+.todo label input[type="checkbox"]:checked ~ span{
+  background-color: #00ff00;
+  border: 1px solid #00ff00;
+  transition: .3s ease-in-out;
+}
+
+.todo label input[type="checkbox"]:checked ~ span::before{
+  border-left: 1.5px solid #fff;
+  border-bottom: 1.5px solid #fff;
+  transition: .3s ease-in-out;
+}
+
+/*completed at bottom*/
